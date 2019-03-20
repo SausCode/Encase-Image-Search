@@ -18,7 +18,7 @@ else:
 parser = imagemounter.ImageParser([encase_file])
 
 for volume in parser.init():
-	print volume.get_description()
+	print(volume.get_description())
 	volume.unmount()
 
 index = raw_input("Enter the volume you want to search in: ")
@@ -33,7 +33,7 @@ for root, dirs, files in os.walk(volume.mountpoint):
 		if file.endswith((".jpg", ".png", ".gif")):
 			result.append(os.path.join(root, file))
 
-print "There are:", len(result), "images that will be searched."
+print("There are:", len(result), "images that will be searched.")
 
 # Instantiates a client
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
@@ -55,7 +55,7 @@ try:
 		absolute_path = file_name
 		file_name = "/".join(file_name.split("/")[2:])
 		if show_file_name is "y" or show_file_name is "yes":
-			print file_name
+			print(file_name)
 
 		# Loads the image into memory
 		with io.open(file_name, 'rb') as image_file:
@@ -69,25 +69,25 @@ try:
 
 		for label in labels:
 			label.description = label.description.lower()
-			tags.setdefault(label.description, [])			
+			tags.setdefault(label.description, [])
 			tags[label.description].append(absolute_path)
 		i = i + 1
-except Exception as e: 
+except Exception as e:
 	print(e)
 
 enter = raw_input("Press y(es) if you would like to see found labels: ")
 if enter is "y" or enter is "yes":
 	for key in tags:
-		print key
+		print(key)
 
 while True:
 	search = raw_input("Enter a search term or press enter to exit: ").lower()
 	if search is None or search is "":
 		break
 	if search not in tags:
-		print "Search term:", search, "is not in tags."
+		print("Search term:", search, "is not in tags.")
 	else:
 		for s in tags[search]:
-			print s
+			print(s)
 
-parser.clean()	    
+parser.clean()
