@@ -78,23 +78,10 @@ try:
 except Exception as e:
 	print(e)
 
-enter = raw_input("Press y(es) if you would like to see found labels: ")
-if enter is "y" or enter is "yes":
+see_labels = raw_input("Press y(es) if you would like to see found labels: ")
+if see_labels is "y" or see_labels is "yes":
 	for key in tags:
 		print(key)
-
-see_raw_images = raw_input("Press y(es) if you would like to see the images")
-if see_raw_image == "y" or see_raw_image == "yes":
-	for key, filenames in tags:
-		for filename in filenames:
-			Image.open(filename).show(
-				title="Key: %s | Filename: %s" % (key, filename)
-			)
-		stop = raw_input("Press Enter to continue, s(top) to quit")
-		if stop == "s" or stop == "stop":
-			break
-	if stop == "s" or stop == "stop": # Have to do 'break' twice to really escape
-		break
 
 while True:
 	search = raw_input("Enter a search term or press enter to exit: ").lower()
@@ -103,7 +90,10 @@ while True:
 	if search not in tags:
 		print("Search term:", search, "is not in tags.")
 	else:
+		see_raw_images = raw_input("Press y(es) if you would like to see the images: ")
 		for s in tags[search]:
 			print(s)
+			if see_raw_images is "y" or see_raw_images is "yes":
+				Image.open(s).show()
 
 parser.clean()
