@@ -5,7 +5,8 @@ The user can then type in search terms and the program outputs the path to the i
 
 Steps to setup:
 1) get a google cloud vision credential (json) @ https://cloud.google.com/docs/authentication/api-keys?hl=en&visit_id=636886486228278470-3830920996&rd=1
-2) git clone https://github.com/SausCode/Encase-Image-Search.git
-3) cd clone
-4) sudo python vision.py /path/to/encase.e01(2,3) google_credential.json
-5) follow on screen instructions
+2) `git clone https://github.com/SausCode/Encase-Image-Search.git`
+3) `cd Encase-Image-Search`
+4) `pip3 install -r requirements.txt`
+5) `sudo python vision.py </path/to/encase.e01(2,3)> <google_credential.json>`
+6) follow on screen instructions
