@@ -43,5 +43,5 @@ We believe that this is a valuable tool for forensics experts who are interested
 in leveraging Google's powerful machine learning techniques to the world of 
 digital forensics. Rather than being used as an ingest module from within 
 Autopsy, we suggest that users run this program alongside Autopsy and use its
-results to better understand the case at hand
+results to better understand the case at hand.
 
