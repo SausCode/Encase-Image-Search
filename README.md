@@ -8,8 +8,7 @@ along with the label that it generated.
 
 
 # Setup 
-Get a [Google Cloud Vision credential (json)] 
-(https://cloud.google.com/docs/authentication/api-keys?hl=en&visit_id=636886486228278470-3830920996&rd=1)
+Get a [Google Cloud Vision credential (json)](https://cloud.google.com/docs/authentication/api-keys?hl=en&visit_id=636886486228278470-3830920996&rd=1)
 
 # Installation
 1. `git clone https://github.com/SausCode/Encase-Image-Search.git`
